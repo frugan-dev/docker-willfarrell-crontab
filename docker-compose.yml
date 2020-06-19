@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+
+  pure-ftpd:
+    container_name: ${CRONTAB_NAME}
+    build:
+      context: .
+      args:
+        CRONTAB_TAG: ${CRONTAB_TAG}
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - default
