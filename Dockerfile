@@ -1,8 +1,6 @@
 ARG CRONTAB_TAG
 
-ENV CRONTAB_TAG=${CRONTAB_TAG:-latest}
-
-FROM willfarrell/crontab:${CRONTAB_TAG}
+FROM willfarrell/crontab:${CRONTAB_TAG:-latest}
 
 RUN apk add --no-cache \
     curl \
